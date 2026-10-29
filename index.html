@@ -1,0 +1,1227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>U.S. Sports Industry — Custom Sportswear for Every Sport</title>
+<meta name="description" content="Fully custom soccer kits, jerseys, basketball uniforms and sportswear for every sport. Pick a design, make it yours, order on WhatsApp." />
+<link rel="icon" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink:#0a1733;
+  --navy:#0f2453;
+  --red:#d81b2c;
+  --red-2:#ff2e42;
+  --ivory:#f3f0e8;
+  --paper:#faf8f3;
+  --tile:#f0eee8;
+  --line:rgba(10,23,51,.12);
+  --muted:#5d6577;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --display:"Archivo",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;overflow-x:clip}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--ivory);color:var(--ink);font-family:var(--display);overflow-x:clip;-webkit-font-smoothing:antialiased}
+body.locked{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img{display:block;max-width:100%}
+::selection{background:var(--red);color:#fff}
+
+.d{font-family:var(--display);font-weight:900;font-style:italic;font-stretch:125%;text-transform:uppercase;letter-spacing:-.02em;line-height:.88}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.ch{display:inline-block;will-change:transform}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.eyebrow::before{content:"";width:28px;height:2px;background:currentColor}
+.wrap{width:min(1320px,100% - 32px);margin-inline:auto}
+@media(min-width:768px){.wrap{width:min(1320px,100% - 80px)}}
+
+.grain{position:fixed;inset:-50%;pointer-events:none;z-index:200;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 8s steps(10) infinite}
+@keyframes grain{0%,100%{transform:translate(0,0)}20%{transform:translate(-5%,4%)}40%{transform:translate(4%,-6%)}60%{transform:translate(-3%,2%)}80%{transform:translate(6%,5%)}}
+
+/* cursor */
+.cursor,.cursor-dot{position:fixed;top:0;left:0;pointer-events:none;z-index:300;border-radius:50%;transform:translate(-50%,-50%)}
+.cursor{width:44px;height:44px;border:1.5px solid var(--red);display:grid;place-items:center;transition:width .4s var(--ease),height .4s var(--ease),background .3s,border-color .3s}
+.cursor span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#fff;opacity:0;transition:opacity .2s}
+.cursor.is-hover{width:70px;height:70px;background:rgba(216,27,44,.12)}
+.cursor.is-view{width:96px;height:96px;background:var(--red);border-color:var(--red)}
+.cursor.is-view span{opacity:1}
+.cursor-dot{width:6px;height:6px;background:var(--red)}
+@media (hover:none),(pointer:coarse){.cursor,.cursor-dot{display:none}}
+
+/* loader */
+.loader{position:fixed;inset:0;z-index:250;background:var(--ink);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:24px}
+.loader-top{display:flex;justify-content:space-between;opacity:.6}
+.loader-mid{display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+.loader-word{font-size:clamp(40px,9vw,150px);overflow:hidden}
+.loader-word span{display:inline-block}
+.loader-count{font-size:clamp(60px,14vw,220px);color:var(--red)}
+.loader-bar{height:2px;background:rgba(255,255,255,.15);margin-top:20px}
+.loader-bar i{display:block;height:100%;width:0;background:var(--red)}
+
+/* nav */
+.nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:100;width:min(1320px,100% - 24px);display:flex;align-items:center;justify-content:space-between;padding:7px 8px 7px 14px;border-radius:999px;background:rgba(250,248,243,.82);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);border:1px solid var(--line);transition:transform .5s var(--ease)}
+.nav.hide{transform:translate(-50%,-140%)}
+.nav-logo img{height:40px;width:auto;display:block}
+.nav-links{display:none;gap:30px;font-size:14px;font-weight:600}
+.nav-links a{position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-4px;width:100%;height:2px;background:var(--red);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+@media(min-width:900px){.nav-links{display:flex}}
+.nav-right{display:flex;gap:8px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 22px;border-radius:999px;font-weight:700;font-size:14px;letter-spacing:.01em;white-space:nowrap;position:relative;overflow:hidden;isolation:isolate;transition:color .4s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;transform:translateY(101%);transition:transform .5s var(--ease)}
+.btn:hover::before{transform:translateY(0)}
+.btn-red{background:var(--red);color:#fff}.btn-red::before{background:var(--ink)}
+.btn-ink{background:var(--ink);color:#fff}.btn-ink::before{background:var(--red)}
+.btn-ghost{border:1.5px solid currentColor}.btn-ghost::before{background:var(--ink)}.btn-ghost:hover{color:#fff}
+.btn-white{background:#fff;color:var(--ink)}.btn-white::before{background:var(--ink)}.btn-white:hover{color:#fff}
+.btn svg{width:18px;height:18px;flex:none}
+.cart-btn{position:relative;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff}
+.cart-btn svg{width:20px;height:20px}
+.cart-count{position:absolute;top:-2px;right:-2px;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:var(--red);font-size:11px;font-weight:800;display:grid;place-items:center;transform:scale(0);transition:transform .4s var(--ease)}
+.cart-count.on{transform:scale(1)}
+.nav .btn-red{display:none}
+@media(min-width:600px){.nav .btn-red{display:inline-flex}}
+
+/* hero — "U.S." cut out of a night sheet over moving kits; the wall tips into a stadium floor */
+.hero{position:relative;height:100vh;height:100svh;min-height:560px;overflow:hidden;background:#050b1d;color:#fff;--g:clamp(8px,1vw,14px)}
+.world{position:absolute;inset:0;perspective:900px;perspective-origin:50% 30%}
+.wall{position:absolute;inset:-12% -20%;display:flex;flex-direction:column;justify-content:center;gap:var(--g);transform:rotate(-8deg) scale(1.15);transform-origin:50% 50%;will-change:transform}
+.wrow{display:flex;width:max-content;will-change:transform}
+.wtile{flex:none;width:var(--t);height:var(--t);border-radius:clamp(12px,1.3vw,20px);background:#fff;overflow:hidden}
+.wrow .wtile{margin:0 var(--g) 0 0}
+.wtile img{width:100%;height:100%;object-fit:contain;padding:7%}
+.wtile.navy{background:var(--navy)}.wtile.red{background:var(--red)}
+.hero .ov{position:absolute;inset:0;width:100%;height:100%;z-index:2;display:block}
+.hlayer{position:absolute;inset:0;pointer-events:none}
+/* light top band only, so the headline reads without dimming the kits */
+.sky{z-index:1;background:linear-gradient(180deg,rgba(5,11,29,.92) 0%,rgba(5,11,29,.78) 32%,rgba(5,11,29,0) 62%,rgba(5,11,29,0) 84%,rgba(5,11,29,.45) 100%);opacity:0}
+.hreveal h1,.hreveal p{text-shadow:0 2px 24px rgba(5,11,29,.7)}
+.beams{z-index:3;mix-blend-mode:screen;opacity:0}
+.beam{position:absolute;top:-30%;width:70vw;height:150%;background:conic-gradient(from 180deg at 50% 0%,transparent 0deg,rgba(180,210,255,0) 160deg,rgba(200,220,255,.28) 175deg,rgba(255,255,255,.35) 180deg,rgba(200,220,255,.28) 185deg,rgba(180,210,255,0) 200deg,transparent 360deg);transform-origin:50% 0%;filter:blur(6px)}
+.beam.l{left:-20vw}.beam.r{right:-20vw}
+.glow{z-index:3;mix-blend-mode:soft-light;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.55),transparent 70%)}
+.hcopy{z-index:4}
+.hcopy .top{position:absolute;top:96px;left:0;right:0;text-align:center;padding:0 16px}
+.hcopy .top h2{font-size:clamp(16px,1.6vw,22px);font-weight:600;color:rgba(255,255,255,.7);margin-top:12px}
+.hcopy .eyebrow{color:#fff}
+.hcopy .bottom{position:absolute;bottom:84px;left:16px;right:16px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+@media(min-width:768px){.hcopy .bottom{left:40px;right:40px;bottom:40px}}
+.hcopy .bottom p{max-width:280px;color:rgba(255,255,255,.7);font-size:14px;line-height:1.5}
+.live-dot{display:inline-flex;align-items:center;gap:8px}
+.live-dot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red);animation:livepulse 1.6s infinite}
+@keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(216,27,44,.7)}100%{box-shadow:0 0 0 10px rgba(216,27,44,0)}}
+.hreveal{position:absolute;left:0;right:0;top:0;z-index:5;padding:110px 16px 0;text-align:center;pointer-events:none}
+.hreveal h1{font-size:clamp(38px,9vw,170px)}
+.hreveal .line{display:block;overflow:hidden;padding:.03em .08em .02em 0;white-space:nowrap}
+.hreveal .red{color:var(--red)}
+.hreveal p{max-width:460px;margin:20px auto 0;color:rgba(255,255,255,.8);line-height:1.55}
+.hreveal .ctas{display:flex;gap:10px;justify-content:center;margin-top:24px;flex-wrap:wrap;pointer-events:auto}
+.hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;pointer-events:none}
+.hint .mouse{width:22px;height:34px;border:1.5px solid currentColor;border-radius:12px;position:relative}
+.hint .mouse::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:#fff;animation:wheel 1.6s var(--ease) infinite}
+@keyframes wheel{0%{transform:translateY(0);opacity:1}70%{transform:translateY(10px);opacity:0}100%{opacity:0}}
+.btn-glass{background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.35);color:#fff;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}.btn-glass::before{background:#fff}.btn-glass:hover{color:var(--ink)}
+
+/* marquee */
+.marquee{background:var(--ink);color:#fff;padding:24px 0;overflow:hidden;position:relative;z-index:2;transform:rotate(-2deg) scale(1.04);margin:0 0 -20px}
+.marquee.alt{background:#fff;color:var(--ink);transform:rotate(2deg) scale(1.04);margin:0;box-shadow:0 20px 40px -24px rgba(10,23,51,.35)}
+.marquee .row{display:flex;width:max-content;align-items:center;will-change:transform}
+.marquee-item{display:flex;align-items:center;gap:32px;padding-right:32px;font-size:clamp(26px,4vw,56px)}
+.marquee-item svg{width:28px;height:28px;color:rgba(255,255,255,.35)}
+.marquee.alt .marquee-item svg{color:var(--red)}
+
+/* manifesto */
+.manifesto{padding:clamp(110px,16vw,200px) 0 clamp(80px,12vw,150px)}
+.manifesto-text{font-size:clamp(28px,4.4vw,70px);font-weight:700;line-height:1.08;letter-spacing:-.025em;font-stretch:90%;margin-top:28px}
+.manifesto-text .w{opacity:.12}
+.manifesto-text .hl{color:var(--red);font-style:italic;font-weight:900}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:clamp(56px,9vw,110px);border-radius:22px;overflow:hidden}
+@media(min-width:900px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--ivory);padding:26px 20px}
+.stat b{display:block;font-size:clamp(40px,5.6vw,86px);white-space:nowrap}
+.stat b em{color:var(--red);font-style:inherit;font-size:.5em;vertical-align:.75em;margin-left:.06em}
+.stat > span{display:block;margin-top:10px;color:var(--muted);font-size:14px;font-weight:500}
+
+/* categories (horizontal) */
+.cats{background:var(--ink);color:#fff;overflow:hidden;position:relative}
+.cats-head{position:absolute;top:0;left:0;right:0;padding:96px 16px 0;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;z-index:2;pointer-events:none}
+@media(min-width:768px){.cats-head{padding:110px 40px 0}}
+.cats-head h2{font-size:clamp(40px,6vw,96px)}
+.cats-progress{width:140px;height:2px;background:rgba(255,255,255,.15);margin-bottom:12px;flex:none}
+.cats-progress i{display:block;height:100%;background:var(--red);transform-origin:left;transform:scaleX(0)}
+.cats-pin{height:100vh;height:100svh;display:flex;align-items:center}
+.cats-track{display:flex;gap:clamp(14px,2vw,26px);padding:150px 16px 0;will-change:transform}
+@media(min-width:768px){.cats-track{padding:160px 40px 0 38vw}}
+.cats-track{align-items:flex-start}
+.cat{flex:none;width:min(74vw,420px);height:min(calc(100svh - 230px),540px);position:relative;cursor:pointer;border-radius:22px;overflow:hidden;background:var(--tile);color:var(--ink);display:flex;flex-direction:column}
+.cat-media{flex:1;min-height:0;position:relative;overflow:hidden}
+.cat-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:9%;mix-blend-mode:multiply;transform:scale(1.08)}
+.cat-num{position:absolute;top:14px;left:16px;z-index:2;color:var(--muted)}
+.cat-count{position:absolute;top:10px;right:12px;z-index:2;background:#fff;padding:6px 10px;border-radius:999px}
+.cat-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:4px 18px 18px}
+.cat-foot h3{font-size:clamp(28px,3vw,46px)}
+.cat-arrow{width:48px;height:48px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none;transition:transform .5s var(--ease),background .3s}
+.cat:hover .cat-arrow{transform:rotate(-45deg);background:var(--red)}
+.cat-arrow svg{width:20px;height:20px}
+.cat.any{background:var(--red);color:#fff;justify-content:space-between;padding:24px 22px;cursor:default}
+.cat.any h3{font-size:clamp(34px,3.6vw,58px)}
+.cat.any p{opacity:.9;line-height:1.5;margin-top:14px;font-size:15px}
+.sport-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.sport-chips span{border:1.5px solid rgba(255,255,255,.45);border-radius:999px;padding:7px 12px;font-weight:700;font-size:13px}
+
+/* shop */
+.shop{padding:clamp(96px,14vw,170px) 0;background:var(--paper)}
+.section-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:40px}
+.section-head h2{font-size:clamp(46px,8vw,140px);margin-top:16px}
+.section-head p{max-width:390px;color:var(--muted);line-height:1.55;font-size:16px}
+.filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:28px;scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
+.chip{flex:none;height:42px;padding:0 18px;border-radius:999px;border:1.5px solid var(--line);font-weight:600;font-size:14px;transition:background .3s,color .3s,border-color .3s}
+.chip:hover{border-color:var(--ink)}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip sup{font-family:var(--mono);font-size:10px;margin-left:4px;opacity:.6}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 12px}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr);gap:24px 20px}}
+@media(min-width:1180px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{position:relative;cursor:pointer;perspective:1000px}
+.card-inner{transform-style:preserve-3d;transition:transform .6s var(--ease)}
+.card-media{aspect-ratio:1/1;border-radius:clamp(14px,1.6vw,22px);overflow:hidden;position:relative;background:var(--tile)}
+.card-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:7%;mix-blend-mode:multiply;transition:transform 1s var(--ease)}
+.card:hover .card-media img{transform:scale(1.07)}
+.card-badge{position:absolute;top:10px;left:10px;z-index:4;background:#fff;color:var(--ink);padding:6px 10px;border-radius:999px;font-size:10px}
+.card-quick{position:absolute;z-index:4;right:12px;bottom:12px;height:40px;padding:0 16px;border-radius:999px;background:var(--ink);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;gap:8px;transform:translateY(140%);transition:transform .5s var(--ease)}
+.card:hover .card-quick{transform:none}
+@media (hover:none){.card-quick{display:none}}
+.card-info{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding:12px 2px 0}
+.card-info h3{font-size:clamp(14px,1.4vw,18px);font-weight:800;letter-spacing:-.01em;line-height:1.2}
+.card-info p{color:var(--muted);font-size:13px;margin-top:4px}
+.card-price{font-weight:800;font-size:13px;white-space:nowrap;padding-top:2px}
+@media(max-width:600px){.card-price{display:none}.card-badge{display:none}}
+.card.hidden{display:none}
+.shop-note{margin-top:44px;padding:22px 24px;border-radius:18px;border:1.5px dashed var(--line);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+.shop-note p{font-weight:600;max-width:640px;line-height:1.5}
+
+/* order steps */
+.order{background:var(--ink);color:#fff;padding:clamp(96px,14vw,170px) 0;position:relative;overflow:hidden}
+.order::before{content:"";position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(216,27,44,.3),transparent 60%);top:-320px;right:-320px;pointer-events:none}
+.order .section-head p{color:rgba(255,255,255,.65)}
+.order-grid{display:grid;gap:14px}
+@media(min-width:700px){.order-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.order-grid{grid-template-columns:repeat(4,1fr)}}
+.o-card{border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:26px;min-height:250px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;background:rgba(255,255,255,.03);transition:color .5s var(--ease)}
+.o-card::before{content:"";position:absolute;inset:0;background:var(--red);transform:translateY(100%);transition:transform .6s var(--ease);z-index:0}
+.o-card:hover::before{transform:none}
+.o-card>*{position:relative;z-index:1}
+.o-num{font-size:72px;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.4);transition:-webkit-text-stroke-color .4s}
+.o-card:hover .o-num{-webkit-text-stroke-color:#fff}
+.o-card h3{font-size:22px;font-weight:800;margin-top:36px}
+.o-card p{margin-top:10px;line-height:1.55;font-size:15px;opacity:.7}
+
+/* production process */
+.process{padding:clamp(96px,14vw,170px) 0;background:var(--ivory);position:relative}
+.process-grid{display:grid;gap:44px}
+@media(min-width:960px){.process-grid{grid-template-columns:.9fr 1.1fr;gap:70px}}
+.process-sticky{position:relative}
+@media(min-width:960px){.process-sticky{position:sticky;top:120px;align-self:start}}
+.process-sticky h2{font-size:clamp(46px,7vw,116px);margin-top:16px}
+.process-sticky p{color:var(--muted);line-height:1.55;margin-top:22px;max-width:420px}
+.steps{position:relative;padding-left:50px}
+.steps-line{position:absolute;left:16px;top:14px;bottom:14px;width:2px;background:var(--line)}
+.steps-line i{position:absolute;inset:0;background:var(--red);transform-origin:top;transform:scaleY(0)}
+.step{position:relative;display:grid;grid-template-columns:118px 1fr;gap:16px;align-items:center;padding:0 0 30px}
+@media(min-width:600px){.step{grid-template-columns:220px 1fr;gap:26px;padding-bottom:40px}}
+.step:last-child{padding-bottom:0}
+.step-dot{position:absolute;left:-50px;top:50%;margin-top:-17px;width:34px;height:34px;border-radius:50%;background:var(--ivory);border:2px solid var(--line);display:grid;place-items:center;font-family:var(--mono);font-size:11px;transition:background .4s,border-color .4s,color .4s}
+.step.on .step-dot{background:var(--red);border-color:var(--red);color:#fff}
+.step-art{aspect-ratio:16/10.5;border-radius:14px;overflow:hidden;clip-path:inset(0 100% 0 0 round 14px)}
+.step-art img{width:100%;height:100%;object-fit:cover}
+.step h3{font-size:clamp(20px,2.4vw,34px);transition:color .4s}
+.step:not(.on) h3{color:rgba(10,23,51,.28)}
+.step p{color:var(--muted);line-height:1.5;margin-top:8px;font-size:14px}
+@media(min-width:600px){.step p{font-size:15px}}
+
+/* cta — ivory doors slide open onto the kit wall */
+.cta{background:var(--ink);color:#fff;position:relative}
+.cta-stage{position:relative;height:100vh;height:100svh;min-height:600px;overflow:hidden;--g:clamp(8px,1vw,14px)}
+.cta-wall{position:absolute;inset:-15% -25%;display:flex;flex-direction:column;justify-content:center;gap:var(--g);transform:rotate(-6deg)}
+.cta-shade{position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 50%,rgba(8,18,42,.92),rgba(8,18,42,.72))}
+.cta-content{position:absolute;inset:0;z-index:2;display:grid;place-items:center;text-align:center;padding:0 16px}
+.cta-content h2{font-size:clamp(36px,7vw,124px);margin-top:18px}
+.cta-content h2 .line{display:block;overflow:hidden;padding:.03em .08em .02em 0;white-space:nowrap}
+.cta-content h2 .red{color:var(--red)}
+.cta-sub{max-width:480px;margin:20px auto 0;font-size:17px;line-height:1.5;color:rgba(255,255,255,.75)}
+.cta-btn-wrap{display:flex;justify-content:center;margin-top:34px}
+.magnet{width:clamp(140px,14vw,180px);height:clamp(140px,14vw,180px);border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;text-align:center;font-weight:800;font-size:15px;position:relative;transition:background .4s,color .4s}
+.magnet:hover{background:var(--red);color:#fff}
+.magnet span{display:flex;flex-direction:column;align-items:center;gap:10px;pointer-events:none}
+.magnet svg{width:32px;height:32px}
+.cta-door{position:absolute;top:0;bottom:0;width:50%;z-index:3;background:var(--ivory);color:var(--ink);overflow:hidden;will-change:transform}
+.cta-door.l{left:0}.cta-door.r{right:0}
+/* each door holds the full phrase centred on the whole stage, so it reads as one line split at the seam */
+.cta-door .phrase{position:absolute;top:0;bottom:0;width:200%;display:flex;align-items:center;justify-content:center;white-space:nowrap;font-size:clamp(26px,7.6vw,190px)}
+.cta-door.l .phrase{left:0}.cta-door.r .phrase{right:0}
+.cta-door em{color:var(--red);font-style:inherit}
+.cta-seam{position:absolute;top:0;bottom:0;left:50%;width:2px;margin-left:-1px;z-index:4;background:linear-gradient(transparent,var(--red),transparent)}
+.footer{background:var(--ink);color:#fff;margin-top:clamp(80px,12vw,150px);border-radius:28px 28px 0 0;padding:56px 0 0;position:relative;overflow:hidden}
+.footer-grid{display:grid;gap:36px;grid-template-columns:1fr 1fr}
+.footer-grid>div:first-child{grid-column:1/-1}
+@media(min-width:900px){.footer-grid{grid-template-columns:1.4fr 1fr 1fr 1fr}.footer-grid>div:first-child{grid-column:auto}}
+.footer-logo{background:var(--ivory);border-radius:18px;padding:14px 18px;display:inline-block}
+.footer-logo img{height:78px;width:auto}
+.footer h4{color:rgba(255,255,255,.5);margin-bottom:16px}
+.footer li{list-style:none;margin-bottom:12px}
+.footer li a{font-weight:600;transition:color .3s;word-break:break-word}
+.footer li a:hover{color:var(--red-2)}
+.footer-about{color:rgba(255,255,255,.6);line-height:1.6;margin-top:20px;max-width:340px}
+.footer-big{display:block;white-space:nowrap;text-align:center;margin-top:60px;line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.28);overflow:hidden;padding:0 .04em .06em 0;font-size:100px}
+.footer-big span{display:inline-block}
+.footer-bottom{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;padding:20px 0 90px;border-top:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);margin-top:24px}
+@media(min-width:768px){.footer-bottom{padding-bottom:22px}}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:150;display:flex;align-items:flex-end;justify-content:center;pointer-events:none}
+@media(min-width:900px){.modal{align-items:center}}
+.modal-bg{position:absolute;inset:0;background:rgba(5,12,28,.6);backdrop-filter:blur(6px);opacity:0;transition:opacity .5s var(--ease)}
+.modal.open{pointer-events:auto}
+.modal.open .modal-bg{opacity:1}
+.modal-box{position:relative;width:100%;max-height:92vh;max-height:92svh;overflow:auto;background:var(--paper);border-radius:24px 24px 0 0;display:grid;transform:translateY(100%);transition:transform .7s var(--ease);overscroll-behavior:contain}
+@media(min-width:900px){.modal-box{grid-template-columns:1fr 1fr;border-radius:28px;width:min(1100px,100% - 60px);transform:translateY(40px) scale(.96);opacity:0;transition:transform .7s var(--ease),opacity .4s}}
+.modal.open .modal-box{transform:none;opacity:1}
+.modal-media{position:relative;background:var(--tile);aspect-ratio:4/3}
+@media(min-width:900px){.modal-media{aspect-ratio:auto;min-height:600px}}
+.modal-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:6%;mix-blend-mode:multiply}
+.modal-body{padding:24px 18px 24px}
+@media(min-width:900px){.modal-body{padding:44px 40px}}
+.modal-close{position:absolute;top:12px;right:12px;z-index:5;width:44px;height:44px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.15);transition:transform .4s var(--ease)}
+.modal-close:hover{transform:rotate(90deg)}
+.modal-body h3{font-size:clamp(28px,3.4vw,48px);margin-top:10px}
+.modal-desc{color:var(--muted);line-height:1.6;margin-top:14px}
+.opt{margin-top:22px}
+.opt>label,.opt>.mono{display:block;margin-bottom:10px;color:var(--muted)}
+.sizes{display:flex;flex-wrap:wrap;gap:8px}
+.size{min-width:50px;height:42px;padding:0 12px;border-radius:12px;border:1.5px solid var(--line);font-weight:700;font-size:14px;transition:all .25s}
+.size:hover{border-color:var(--ink)}
+.size.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.input{width:100%;height:50px;border-radius:12px;border:1.5px solid var(--line);background:#fff;padding:0 14px;font:500 16px var(--display);outline:none;transition:border-color .3s}
+textarea.input{height:86px;padding:12px 14px;resize:vertical}
+.input:focus{border-color:var(--ink)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.qty{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:12px;height:50px;background:#fff}
+.qty button{width:46px;height:100%;font-size:20px;font-weight:700}
+.qty input{width:60px;text-align:center;border:0;font:800 16px var(--display);outline:none;background:transparent}
+.modal-actions{display:grid;gap:10px;margin-top:26px}
+@media(min-width:500px){.modal-actions{grid-template-columns:1fr 1fr}}
+.modal-actions .btn{height:54px;justify-content:center}
+
+/* drawer */
+.drawer{position:fixed;inset:0;z-index:160;pointer-events:none}
+.drawer.open{pointer-events:auto}
+.drawer-bg{position:absolute;inset:0;background:rgba(5,12,28,.55);opacity:0;transition:opacity .5s}
+.drawer.open .drawer-bg{opacity:1}
+.drawer-panel{position:absolute;top:0;right:0;bottom:0;width:min(460px,100%);background:var(--paper);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .7s var(--ease)}
+.drawer.open .drawer-panel{transform:none}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:20px;border-bottom:1px solid var(--line)}
+.drawer-head h3{font-size:32px}
+.drawer-list{flex:1;overflow:auto;padding:8px 20px;overscroll-behavior:contain}
+.d-item{display:grid;grid-template-columns:76px 1fr auto;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);align-items:start}
+.d-thumb{width:76px;height:76px;border-radius:12px;overflow:hidden;background:var(--tile)}
+.d-thumb img{width:100%;height:100%;object-fit:contain;padding:6%;mix-blend-mode:multiply}
+.d-item h4{font-size:16px;font-weight:800}
+.d-item p{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.45}
+.d-remove{font-size:12px;font-weight:700;color:var(--red);text-decoration:underline}
+.drawer-empty{text-align:center;padding:80px 20px;color:var(--muted)}
+.drawer-empty b{display:block;font-size:40px;color:var(--ink);margin-bottom:12px}
+.drawer-foot{padding:18px 20px;border-top:1px solid var(--line)}
+.drawer-foot .btn{width:100%;justify-content:center;height:56px}
+.drawer-foot small{display:block;text-align:center;color:var(--muted);margin-top:12px;font-size:12px}
+
+.toast{position:fixed;left:50%;bottom:24px;z-index:170;transform:translate(-50%,calc(100% + 40px));background:var(--ink);color:#fff;padding:14px 20px;border-radius:999px;font-weight:600;font-size:14px;display:flex;gap:10px;align-items:center;transition:transform .6s var(--ease);white-space:nowrap}
+.toast.on{transform:translate(-50%,0)}
+.toast i{width:8px;height:8px;border-radius:50%;background:#25d366}
+
+.fab{position:fixed;right:16px;bottom:16px;z-index:90;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 14px 30px rgba(37,211,102,.4);transform:scale(0);transition:transform .5s var(--ease)}
+.fab.on{transform:scale(1)}
+.fab svg{width:30px;height:30px}
+.fab::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:ping 2s infinite}
+@keyframes ping{to{transform:scale(1.6);opacity:0}}
+
+/* prices */
+.card-price small{font-weight:600;font-size:.82em;color:var(--muted);margin-left:2px}
+@media(max-width:600px){.card-info{flex-direction:column;gap:3px}.card-price{display:block;padding:0;font-size:15px}}
+.cat-price{display:block;margin-top:6px;font-size:13px;font-weight:600;color:var(--muted)}
+.cat-price b{color:var(--ink);font-size:16px;font-weight:800}
+.m-price{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 10px;margin-top:12px}
+.m-price b{font-size:30px;font-weight:900;letter-spacing:-.02em}
+.m-price > span:not(.ship-pill){color:var(--muted);font-weight:600;font-size:14px}
+.ship-pill{display:inline-flex;align-items:center;gap:6px;align-self:center;background:rgba(15,36,83,.08);color:var(--navy);border-radius:999px;padding:6px 11px;font-size:12px;font-weight:700}
+.ship-pill svg{width:14px;height:14px}
+.m-total{font-weight:700;font-size:14px;margin-top:6px;min-height:1.2em}
+.d-price{color:var(--ink)!important}
+.d-total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.d-total span{color:var(--muted);font-weight:600;font-size:14px}
+.d-total b{font-size:24px;font-weight:900}
+.hreveal p b{color:#fff}
+
+/* free worldwide shipping panel */
+.ship{margin-top:clamp(28px,5vw,64px);border-radius:clamp(20px,2.4vw,32px);background:var(--ink);color:#fff;display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,64px);align-items:center;padding:clamp(22px,4vw,56px);position:relative;overflow:hidden}
+.ship::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(216,27,44,.28),transparent 65%);left:-160px;top:-160px;pointer-events:none}
+.ship > *{position:relative}
+.ship h3{font-size:clamp(36px,5.4vw,88px);margin-top:14px}
+.ship h3 .red{color:var(--red)}
+.ship ul{list-style:none;margin:20px 0 26px;display:grid;gap:10px}
+.ship li{display:flex;gap:10px;align-items:flex-start;color:rgba(255,255,255,.82);line-height:1.45;font-size:15px}
+.ship li svg{width:20px;height:20px;flex:none;color:#25d366;margin-top:1px}
+.globe svg{width:clamp(150px,18vw,260px);height:auto;display:block;overflow:visible}
+.g-face{fill:#13275a}
+.g-lines{fill:none;stroke:rgba(255,255,255,.28);stroke-width:1.2}
+.g-mer ellipse{transform-origin:100px 100px;animation:mer 6s linear infinite}
+.g-mer ellipse:nth-child(2){animation-delay:-2s}.g-mer ellipse:nth-child(3){animation-delay:-4s}
+@keyframes mer{0%{transform:scaleX(1)}50%{transform:scaleX(-1)}100%{transform:scaleX(1)}}
+.g-rim{fill:none;stroke:rgba(255,255,255,.55);stroke-width:1.5}
+.g-orbit{transform-origin:100px 100px;transform:rotate(-18deg)}
+.g-path{fill:none;stroke:rgba(255,255,255,.25);stroke-width:1.2;stroke-dasharray:4 6}
+.g-plane{fill:var(--red);offset-path:path("M196,100 A96,34 0 1,1 4,100 A96,34 0 1,1 196,100");animation:orbit 7s linear infinite}
+@keyframes orbit{to{offset-distance:100%}}
+@media(max-width:700px){.ship{grid-template-columns:1fr;text-align:left}.globe{justify-self:center}.globe svg{width:150px}.ship li{font-size:14px}}
+
+/* mobile: hero ending sits in the middle of the screen instead of hugging the top */
+@media(max-width:767px){
+  .hreveal{top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;padding:70px 16px 30px}
+  .hreveal h1{font-size:clamp(34px,11vw,64px)}
+  .hreveal p{font-size:15px}
+  .sky{background:linear-gradient(180deg,rgba(5,11,29,.35) 0%,rgba(5,11,29,.82) 30%,rgba(5,11,29,.82) 70%,rgba(5,11,29,.35) 100%)}
+}
+/* mobile: how-to-order steps as a compact 2x2 grid */
+@media(max-width:699px){
+  .order-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .o-card{min-height:0;padding:16px 14px;border-radius:16px}
+  .o-num{font-size:38px}
+  .o-card h3{font-size:16px;margin-top:12px;line-height:1.2}
+  .o-card p{font-size:13px;margin-top:6px;line-height:1.45}
+}
+/* mobile: CTA heading always fits the width */
+@media(max-width:767px){.cta-content h2{font-size:clamp(24px,7.4vw,56px)}.cta-sub{font-size:15px}}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body class="locked">
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span>VIEW</span></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader-top mono"><span>U.S. Sports Industry</span><span>Custom Sportswear</span></div>
+  <div>
+    <div class="loader-mid">
+      <div class="loader-word d"><span>Suit&nbsp;up.</span></div>
+      <div class="loader-count d" id="loaderCount">0</div>
+    </div>
+    <div class="loader-bar"><i id="loaderBar"></i></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<header class="nav hide" id="nav">
+  <a href="#top" class="nav-logo" aria-label="U.S. Sports Industry home"><img src="assets/logo.png" alt="U.S. Sports Industry" /></a>
+  <nav class="nav-links">
+    <a href="#sports">Sports</a>
+    <a href="#shop">Designs</a>
+    <a href="#order">How to order</a>
+    <a href="#process">Production</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="nav-right">
+    <a class="btn btn-red" data-wa="Hi U.S. Sports Industry! I'd like to get custom sportswear made." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg>Order on WhatsApp
+    </a>
+    <button class="cart-btn" id="cartBtn" aria-label="Open your order">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="world"><div class="wall" id="wall"></div></div>
+  <div class="hlayer sky" id="sky"></div>
+  <canvas class="ov" id="ov" aria-hidden="true"></canvas>
+  <div class="hlayer beams" id="beams"><div class="beam l" id="beamL"></div><div class="beam r" id="beamR"></div></div>
+  <div class="hlayer glow" id="glow"></div>
+  <div class="hlayer hcopy" id="hcopy">
+    <div class="top"><span class="eyebrow">U.S. Sports Industry</span><h2>Custom sportswear for every sport</h2></div>
+    <div class="bottom"><p>Every design fully custom — your colours, your crest, your names &amp; numbers.</p><p class="mono live-dot">Free worldwide shipping</p></div>
+  </div>
+  <div class="hreveal" id="hreveal">
+    <h1 class="d" id="heroTitle" data-split><span class="line">We make</span><span class="line"><span class="red">every</span> kit.</span></h1>
+    <p id="heroP">Soccer kits from $24, jerseys from $16 — fully custom, with <b>free shipping worldwide</b>. Order in one tap on WhatsApp.</p>
+    <div class="ctas" id="heroCtas">
+      <a href="#shop" class="btn btn-red">Browse designs
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-glass" data-wa="Hi U.S. Sports Industry! I'd like to get custom sportswear made." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg>WhatsApp us</a>
+    </div>
+  </div>
+  <div class="hint" id="hint"><span class="mouse"></span>Scroll</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" data-marquee>
+  <div class="row" data-loop="1" data-speed="1.1"></div>
+</div>
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <div class="wrap">
+    <span class="eyebrow">Who we are</span>
+    <p class="manifesto-text" id="manifesto">No two teams are the same, so no two kits should be. We make <span class="hl">fully custom</span> sportswear for soccer, basketball, cricket and every sport in between — your colours, your crest, your names and numbers. Pick a design you like, tell us your vision, and we'll make it <span class="hl">yours.</span></p>
+
+    <div class="stats">
+      <div class="stat"><b class="d"><span data-count="225">0</span><em>+</em></b><span>Teams &amp; clubs kitted out</span></div>
+      <div class="stat"><b class="d"><span data-count="9000" data-format="k">0</span><em>+</em></b><span>Uniforms delivered</span></div>
+      <div class="stat"><b class="d"><span data-count="12">0</span><em>+</em></b><span>Sports we make for</span></div>
+      <div class="stat"><b class="d"><span data-count="4.9" data-dec="1">0</span><em>★</em></b><span>Average customer rating</span></div>
+    </div>
+
+    <!-- FREE WORLDWIDE SHIPPING -->
+    <div class="ship" id="ship">
+      <div class="globe" aria-hidden="true">
+        <svg viewBox="0 0 200 200">
+          <defs><clipPath id="gclip"><circle cx="100" cy="100" r="78"/></clipPath></defs>
+          <circle cx="100" cy="100" r="78" class="g-face"/>
+          <g clip-path="url(#gclip)" class="g-lines">
+            <ellipse cx="100" cy="100" rx="78" ry="26"/><ellipse cx="100" cy="100" rx="78" ry="56"/><line x1="22" y1="100" x2="178" y2="100"/>
+            <g class="g-mer"><ellipse cx="100" cy="100" rx="78" ry="78"/><ellipse cx="100" cy="100" rx="52" ry="78"/><ellipse cx="100" cy="100" rx="22" ry="78"/></g>
+          </g>
+          <circle cx="100" cy="100" r="78" class="g-rim"/>
+          <g class="g-orbit"><ellipse cx="100" cy="100" rx="96" ry="34" class="g-path"/><circle cx="0" cy="0" r="6" class="g-plane"/></g>
+        </svg>
+      </div>
+      <div class="ship-body">
+        <span class="eyebrow" style="color:#fff">Our promise</span>
+        <h3 class="d">Free shipping.<br/><span class="red">Worldwide.</span></h3>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Every order ships free — no minimum, no hidden fees</li>
+          <li><svg><use href="#i-check"/></svg>Delivered to your door, wherever your team plays</li>
+          <li><svg><use href="#i-check"/></svg>Soccer kits $24 · Jerseys $16 · Basketball &amp; women's kits $23</li>
+        </ul>
+        <a class="btn btn-red" data-wa="Hi U.S. Sports Industry! I'd like to order custom kits with free worldwide shipping." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg>Start your order</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="cats" id="sports">
+  <div class="cats-head">
+    <div>
+      <span class="eyebrow">Pick your sport</span>
+      <h2 class="d" style="margin-top:14px">Every<br/>game.</h2>
+    </div>
+    <div class="cats-progress"><i id="catsProgress"></i></div>
+  </div>
+  <div class="cats-pin">
+    <div class="cats-track" id="catsTrack"></div>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section class="shop" id="shop">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Design templates</span>
+        <h2 class="d">Start<br/>here.</h2>
+      </div>
+      <p>Every design is a starting point, not a final product. Pick one you like and we'll change anything — colours, pattern, logo, names, numbers — until it's exactly yours.</p>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div class="grid" id="grid"></div>
+    <div class="shop-note">
+      <p>Playing a different sport, or have your own idea? Send us a sketch or reference picture — we'll design it from scratch.</p>
+      <a class="btn btn-ink" data-wa="Hi! I have my own design idea for custom sportswear. Can you help?" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg>Send your idea</a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee alt" data-marquee>
+  <div class="row" data-loop="-1" data-speed="1.1"></div>
+</div>
+
+<!-- HOW TO ORDER -->
+<section class="order" id="order">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">How to order</span><h2 class="d">Easy<br/>as 1-2-3-4.</h2></div>
+      <p>No accounts, no checkout forms. Just pick, chat and approve — we handle everything else.</p>
+    </div>
+    <div class="order-grid">
+      <div class="o-card"><span class="o-num d">01</span><div><h3>Pick a design</h3><p>Choose any template as your starting point — or send us your own idea.</p></div></div>
+      <div class="o-card"><span class="o-num d">02</span><div><h3>Send it on WhatsApp</h3><p>Tell us your colours, logo, player names, numbers and sizes.</p></div></div>
+      <div class="o-card"><span class="o-num d">03</span><div><h3>Approve your mock-up</h3><p>We send you a digital preview and adjust it until you love it.</p></div></div>
+      <div class="o-card"><span class="o-num d">04</span><div><h3>Free delivery, worldwide</h3><p>Your kits are made, packed and shipped to your door — free, wherever you are.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTION PROCESS -->
+<section class="process" id="process">
+  <div class="wrap process-grid">
+    <div class="process-sticky">
+      <span class="eyebrow">Production</span>
+      <h2 class="d">From idea<br/>to <span style="color:var(--red)">game</span><br/>day.</h2>
+      <p>Every kit goes through the same nine careful steps — from the first design on screen to the finished box on your doorstep.</p>
+    </div>
+    <div class="steps" id="steps">
+      <div class="steps-line"><i id="stepsLine"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA + FOOTER -->
+<section class="cta" id="contact">
+  <div class="cta-stage" id="ctaStage">
+    <div class="cta-wall" id="ctaWall"></div>
+    <div class="cta-shade"></div>
+    <div class="cta-content">
+      <div>
+        <span class="eyebrow" style="color:#fff">Ready when you are</span>
+        <h2 class="d" id="ctaTitle" data-split><span class="line">Your kit is one</span><span class="line"><span class="red">message</span> away.</span></h2>
+        <p class="cta-sub">Tell us about your team and we'll start designing your custom kit today.</p>
+        <div class="cta-btn-wrap">
+          <a class="magnet" id="magnet" data-wa="Hi U.S. Sports Industry! I'd like to get custom uniforms made for my team." target="_blank" rel="noopener">
+            <span><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg>Chat on<br/>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="cta-door l" id="doorL"><span class="phrase d">Let's suit up<em>.</em></span></div>
+    <div class="cta-door r" id="doorR"><span class="phrase d">Let's suit up<em>.</em></span></div>
+    <div class="cta-seam" id="ctaSeam"></div>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo"><img src="assets/logo.png" alt="U.S. Sports Industry" /></div>
+          <p class="footer-about">Fully custom sportswear for teams, clubs and players — every sport, every design, made your way.</p>
+        </div>
+        <div><h4 class="mono">Explore</h4><ul><li><a href="#sports">Sports</a></li><li><a href="#shop">Designs</a></li><li><a href="#order">How to order</a></li><li><a href="#process">Production</a></li></ul></div>
+        <div><h4 class="mono">Follow</h4><ul>
+          <li><a href="https://www.instagram.com/ussportsindustry" target="_blank" rel="noopener">Instagram ↗</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61595290102473" target="_blank" rel="noopener">Facebook ↗</a></li>
+        </ul></div>
+        <div><h4 class="mono">Contact</h4><ul>
+          <li><a data-wa="Hi U.S. Sports Industry!" target="_blank" rel="noopener">+1 (406) 964-3039</a></li>
+          <li><a href="mailto:ussportsindustry@gmail.com">ussportsindustry@gmail.com</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-big d" id="footerBig">U.S. Sports</div>
+      <div class="footer-bottom mono"><span>© <span id="year"></span> U.S. Sports Industry</span><span>Custom sportswear · Free worldwide shipping</span></div>
+    </div>
+  </footer>
+</section>
+
+</main>
+
+<!-- PRODUCT MODAL -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-bg" data-close></div>
+  <div class="modal-box" data-lenis-prevent role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="modal-close" data-close aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="modal-media" id="mMedia"></div>
+    <div class="modal-body">
+      <span class="eyebrow" id="mCat">Soccer</span>
+      <h3 class="d" id="mTitle">Template</h3>
+      <div class="m-price"><b id="mPrice">$0</b><span>per kit</span><span class="ship-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-globe"/></svg>Free worldwide shipping</span></div>
+      <div class="m-total" id="mTotal"></div>
+      <p class="modal-desc" id="mDesc"></p>
+
+      <div class="opt"><span class="mono">Sizes needed (tap all that apply)</span><div class="sizes" id="mSizes"></div></div>
+      <div class="opt two">
+        <div><label class="mono" for="mColors">Your colours</label><input class="input" id="mColors" placeholder="e.g. Navy &amp; gold" /></div>
+        <div><label class="mono" for="mTeam">Team name</label><input class="input" id="mTeam" placeholder="e.g. Lahore Lions" /></div>
+      </div>
+      <div class="opt"><label class="mono" for="mNotes">Anything else? (logo, names, numbers…)</label><textarea class="input" id="mNotes" placeholder="Tell us how you want it customised"></textarea></div>
+      <div class="opt"><span class="mono">Quantity (kits)</span>
+        <div class="qty"><button type="button" id="qMinus" aria-label="Less">−</button><input id="mQty" value="1" inputmode="numeric" aria-label="Quantity" /><button type="button" id="qPlus" aria-label="More">+</button></div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="mAdd">Add to order</button>
+        <a class="btn btn-red" id="mWa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg>Order on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ORDER DRAWER -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-bg" data-close-drawer></div>
+  <aside class="drawer-panel" role="dialog" aria-modal="true" aria-label="Your order">
+    <div class="drawer-head"><h3 class="d">Your order</h3><button class="modal-close" style="position:static;box-shadow:none;border:1px solid var(--line)" data-close-drawer aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+    <div class="drawer-list" id="drawerList" data-lenis-prevent></div>
+    <div class="drawer-foot">
+      <div class="d-total"><span>Estimated total</span><b id="dTotal">$0</b></div>
+      <a class="btn btn-red" id="sendOrder" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg>Send order on WhatsApp</a>
+      <small>Free worldwide shipping · We'll reply with your design mock-up.</small>
+    </div>
+  </aside>
+</div>
+
+<div class="toast" id="toast"><i></i><span>Added to your order</span></div>
+<a class="fab" id="fab" data-wa="Hi U.S. Sports Industry!" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg></a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4ZM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8Zm8.4-18.2A11.8 11.8 0 0 0 1.8 17.8L.1 24l6.4-1.7A11.8 11.8 0 0 0 24 12c0-3.2-1.2-6.1-3.6-8.4Z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.6 3.9 5.8 3.9 9.5s-1.3 6.9-3.9 9.5c-2.6-2.6-3.9-5.8-3.9-9.5S9.4 5.1 12 2.5Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.7 7.3L12 17.6 5.7 21.5l1.7-7.3L2 9.5l7.1-.6Z"/></symbol>
+</svg>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+/* =========================================================
+   EDIT HERE — business details, categories and designs
+   Images live in assets/kits/ and assets/process/
+   ========================================================= */
+const WHATSAPP = "14069643039";
+
+const CATEGORIES = [
+  { id:"soccer",     name:"Soccer Kits",   cover:"k01", price:24 },
+  { id:"jerseys",    name:"Jerseys",       cover:"k05", price:16 },
+  { id:"basketball", name:"Basketball",    cover:"k18", price:23 },
+  { id:"women",      name:"Women's Kits",  cover:"k08", price:23 },
+];
+const OTHER_SPORTS = ["Cricket","Rugby","Volleyball","Hockey","American Football","Baseball","Tracksuits","Training Wear","Hoodies"];
+
+// prices are per kit and come from the template's category (CATEGORIES above)
+const TEMPLATES = [
+  { img:"k01", name:"Classic Stripes Kit",    cat:"soccer",     desc:"Red & white striped shirt with navy shorts and matching socks." },
+  { img:"k02", name:"Violet Sash Kit",        cat:"soccer",     desc:"Deep purple kit with a bold pink sash and halftone detail." },
+  { img:"k06", name:"Prism Kit",              cat:"soccer",     desc:"Full kit with a geometric prism print across shirt, shorts and socks." },
+  { img:"k11", name:"Inferno Kit",            cat:"soccer",     desc:"All-red kit with sharp chevron graphics." },
+  { img:"k15", name:"Royal Stripe Kit",       cat:"soccer",     desc:"Royal blue & white stripes with patterned sleeves." },
+  { img:"k16", name:"White & Gold Kit",       cat:"soccer",     desc:"Clean white kit with black and gold flame trims." },
+  { img:"k21", name:"Black & Gold Kit",       cat:"soccer",     desc:"Premium black kit with metallic gold accents." },
+  { img:"k05", name:"Storm Blue Jersey",      cat:"jerseys",    desc:"Navy jersey with electric blue brush-stroke graphics." },
+  { img:"k04", name:"Amethyst Jersey",        cat:"jerseys",    desc:"Purple jersey with a crystal texture and striped shoulders." },
+  { img:"k12", name:"Volt Jersey",            cat:"jerseys",    desc:"High-visibility lime jersey with blue speed lines." },
+  { img:"k13", name:"Claw Jersey",            cat:"jerseys",    desc:"Black jersey with aggressive red claw-mark slashes." },
+  { img:"k19", name:"Monochrome Jersey",      cat:"jerseys",    desc:"White jersey with black and grey side panels." },
+  { img:"k20", name:"Pixel Purple Jersey",    cat:"jerseys",    desc:"Purple jersey with a digital pixel-wave pattern." },
+  { img:"k18", name:"Velocity Basketball Set",cat:"basketball", desc:"Black & royal blue jersey and shorts with angular graphics." },
+  { img:"k10", name:"Shatter Basketball Set", cat:"basketball", desc:"Black set with red and white shattered-glass panels." },
+  { img:"k17", name:"Fade Basketball Set",    cat:"basketball", desc:"White-to-purple gradient jersey with matching shorts." },
+  { img:"k08", name:"Burgundy & Gold Kit",    cat:"women",      desc:"Fitted women's kit in burgundy and black with gold detailing." },
+  { img:"k09", name:"Midnight & Gold Kit",    cat:"women",      desc:"Fitted women's kit in navy with white brush strokes and gold trim." },
+  { img:"k07", name:"Sky Stripe Kit",         cat:"women",      desc:"Fitted women's kit in sky blue and white stripes." },
+];
+
+const PROCESS = [
+  ["Design",            "Our designers turn your idea into a digital kit design."],
+  ["Pattern design",    "Each design is mapped onto precise patterns for every size."],
+  ["Digital printing",  "Your design is printed in high resolution onto transfer paper."],
+  ["Sublimation",       "Heat presses the colours permanently into the fabric — no peeling or fading."],
+  ["Auto-cutting",      "Machines cut every panel accurately to shape."],
+  ["Quality check",     "Every cut piece is inspected before it moves on."],
+  ["Sewing",            "Skilled tailors stitch each uniform together."],
+  ["Packing",           "Kits are folded, sorted by size and packed with care."],
+  ["Ready to ship",     "Finished orders are boxed and sent out to you."],
+];
+
+const SIZES = ["Kids","XS","S","M","L","XL","XXL","3XL"];
+/* ========================================================= */
+
+const $ = (s,el=document)=>el.querySelector(s);
+const $$ = (s,el=document)=>[...el.querySelectorAll(s)];
+const kit = id => `assets/kits/${id}.jpg`;
+const waLink = msg => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
+const catName = id => (CATEGORIES.find(c=>c.id===id)||{}).name || id;
+const catPrice = id => (CATEGORIES.find(c=>c.id===id)||{}).price || 0;
+const money = n => "$" + n.toLocaleString("en-US");
+const esc = s => String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+// the hero is a scroll story, so always start it from the top
+if("scrollRestoration" in history) history.scrollRestoration = "manual";
+scrollTo(0,0);
+
+$$("[data-wa]").forEach(a=>a.href = waLink(a.dataset.wa));
+$("#year").textContent = new Date().getFullYear();
+
+/* marquee content */
+const mWords = ["Soccer","Free worldwide shipping","Basketball","Cricket","Jerseys","Free worldwide shipping","Rugby","Volleyball","Hockey","Tracksuits","100% Custom"];
+$$("[data-marquee] .row").forEach(r=>{
+  const item = `<div class="marquee-item d">${mWords.map(w=>`<span>${w}</span><svg viewBox="0 0 24 24"><use href="#i-star"/></svg>`).join("")}</div>`;
+  r.innerHTML = item+item;
+});
+
+/* categories */
+$("#catsTrack").innerHTML = CATEGORIES.map((c,i)=>{
+  const n = TEMPLATES.filter(t=>t.cat===c.id).length;
+  return `<article class="cat" data-cat="${c.id}" data-cursor="view">
+    <div class="cat-media"><img src="${kit(c.cover)}" alt="${esc(c.name)}" loading="lazy"></div>
+    <span class="cat-num mono">${String(i+1).padStart(2,"0")}</span>
+    <span class="cat-count mono">${n} designs</span>
+    <div class="cat-foot"><div><h3 class="d">${c.name}</h3><span class="cat-price"><b>${money(c.price)}</b> / kit · Free shipping</span></div>
+      <span class="cat-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  </article>`;}).join("") + `
+  <article class="cat any">
+    <div><span class="mono" style="opacity:.8">${String(CATEGORIES.length+1).padStart(2,"0")}</span>
+      <h3 class="d" style="margin-top:14px">Any sport.<br/>Any design.</h3>
+      <p>Don't see your sport? We make custom uniforms for every game.</p>
+      <div class="sport-chips">${OTHER_SPORTS.map(s=>`<span>${s}</span>`).join("")}</div></div>
+    <a class="btn btn-white" style="margin-top:22px;align-self:flex-start" href="${waLink("Hi! I need custom uniforms for my sport. Can you help?")}" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg>Ask us on WhatsApp</a>
+  </article>`;
+
+/* filters + grid */
+$("#filters").innerHTML = `<button class="chip on" data-f="all">All<sup>${TEMPLATES.length}</sup></button>` +
+  CATEGORIES.map(c=>`<button class="chip" data-f="${c.id}">${c.name}<sup>${TEMPLATES.filter(t=>t.cat===c.id).length}</sup></button>`).join("");
+$("#grid").innerHTML = TEMPLATES.map((t,i)=>`
+  <article class="card" data-i="${i}" data-cat="${t.cat}" data-cursor="view">
+    <div class="card-inner">
+      <div class="card-media"><img src="${kit(t.img)}" alt="${esc(t.name)}" loading="lazy" decoding="async">
+        <span class="card-badge mono">Customisable</span>
+        <button class="card-quick">Customise <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+      <div class="card-info"><div><h3>${esc(t.name)}</h3><p>${catName(t.cat)}</p></div><span class="card-price">${money(catPrice(t.cat))}<small>/kit</small></span></div>
+    </div>
+  </article>`).join("");
+
+function applyFilter(f){
+  $$("#filters .chip").forEach(c=>c.classList.toggle("on",c.dataset.f===f));
+  const cards = $$("#grid .card");
+  gsap.to(cards,{opacity:0,y:20,duration:.2,onComplete(){
+    cards.forEach(c=>c.classList.toggle("hidden", f!=="all" && c.dataset.cat!==f));
+    const vis = cards.filter(c=>!c.classList.contains("hidden"));
+    gsap.fromTo(vis,{opacity:0,y:40},{opacity:1,y:0,duration:.7,stagger:.05,ease:"expo.out"});
+    ScrollTrigger.refresh();
+  }});
+}
+$("#filters").addEventListener("click",e=>{const b=e.target.closest(".chip"); if(b) applyFilter(b.dataset.f);});
+$("#catsTrack").addEventListener("click",e=>{
+  const c=e.target.closest(".cat[data-cat]"); if(!c) return;
+  applyFilter(c.dataset.cat);
+  lenis ? lenis.scrollTo("#shop",{offset:-20,duration:1.6}) : $("#shop").scrollIntoView({behavior:"smooth"});
+});
+
+/* process steps */
+$("#steps").insertAdjacentHTML("beforeend", PROCESS.map(([t,d],i)=>`
+  <div class="step"><span class="step-dot">${String(i+1).padStart(2,"0")}</span>
+    <div class="step-art"><img src="assets/process/p${i+1}.jpg" alt="${esc(t)}" loading="lazy"></div>
+    <div><h3 class="d">${t}</h3><p>${d}</p></div></div>`).join(""));
+
+/* card tilt */
+$$(".card").forEach(card=>{
+  const inner = $(".card-inner",card);
+  card.addEventListener("pointermove",e=>{
+    if(e.pointerType!=="mouse") return;
+    const r=card.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    inner.style.transform=`rotateY(${x*10}deg) rotateX(${-y*10}deg)`;
+  });
+  card.addEventListener("pointerleave",()=>inner.style.transform="");
+});
+
+/* ===== order (cart) ===== */
+let order = [];
+try{ order = JSON.parse(localStorage.getItem("usi-order")||"[]").filter(it=>TEMPLATES.some(t=>t.name===it.name)); }catch(e){ order=[]; }
+const save = ()=>{ try{ localStorage.setItem("usi-order",JSON.stringify(order)); }catch(e){} };
+
+const lineTotal = it => catPrice(it.cat) * it.qty;
+const orderTotal = () => order.reduce((s,it)=>s+lineTotal(it),0);
+function itemText(it,n){
+  let s = `${n?n+". ":""}*${it.name}* (${catName(it.cat)})\n   Quantity: ${it.qty} kit${it.qty>1?"s":""}`;
+  s += `\n   Price: ${money(catPrice(it.cat))} per kit = ${money(lineTotal(it))}`;
+  if(it.sizes.length) s += `\n   Sizes: ${it.sizes.join(", ")}`;
+  if(it.colors) s += `\n   Colours: ${it.colors}`;
+  if(it.team) s += `\n   Team name: ${it.team}`;
+  if(it.notes) s += `\n   Notes: ${it.notes}`;
+  return s;
+}
+function renderOrder(){
+  $("#cartCount").textContent = order.length;
+  $("#cartCount").classList.toggle("on",order.length>0);
+  const list = $("#drawerList"), send = $("#sendOrder");
+  if(!order.length){
+    list.innerHTML = `<div class="drawer-empty"><b class="d">Empty bench.</b>Pick a design and add it to your order.</div>`;
+    send.style.opacity=.4; send.style.pointerEvents="none";
+    $("#dTotal").textContent = money(0);
+    return;
+  }
+  send.style.opacity=1; send.style.pointerEvents="";
+  list.innerHTML = order.map((it,i)=>{
+    const t = TEMPLATES.find(x=>x.name===it.name);
+    const meta = [ `${it.qty} kit${it.qty>1?"s":""}`, it.sizes.join(", "), it.colors, it.team ].filter(Boolean).map(esc).join(" · ");
+    return `<div class="d-item"><div class="d-thumb"><img src="${kit(t.img)}" alt=""></div>
+      <div><h4>${esc(it.name)}</h4><p>${meta}</p>${it.notes?`<p>${esc(it.notes)}</p>`:""}<p class="d-price">${money(catPrice(it.cat))} × ${it.qty} = <b>${money(lineTotal(it))}</b></p></div>
+      <button class="d-remove" data-rm="${i}">Remove</button></div>`;
+  }).join("");
+  $("#dTotal").textContent = money(orderTotal());
+  send.href = waLink(`Hi U.S. Sports Industry! I'd like to order these custom designs:\n\n${order.map((it,i)=>itemText(it,i+1)).join("\n\n")}\n\nEstimated total: ${money(orderTotal())} (free worldwide shipping)\n\nPlease send me a mock-up. Thanks!`);
+}
+$("#drawerList").addEventListener("click",e=>{
+  const b=e.target.closest("[data-rm]"); if(!b) return;
+  order.splice(+b.dataset.rm,1); save(); renderOrder();
+});
+const drawer=$("#drawer");
+function openDrawer(){ drawer.classList.add("open"); drawer.setAttribute("aria-hidden","false"); lenis&&lenis.stop(); }
+function closeDrawer(){ drawer.classList.remove("open"); drawer.setAttribute("aria-hidden","true"); lenis&&lenis.start(); }
+$("#cartBtn").addEventListener("click",openDrawer);
+$$("[data-close-drawer]").forEach(b=>b.addEventListener("click",closeDrawer));
+renderOrder();
+
+/* ===== product modal ===== */
+const modal=$("#modal"); let current=null;
+function readModal(){
+  return {
+    name: current.name, cat: current.cat,
+    sizes: $$("#mSizes .size.on").map(b=>b.dataset.s),
+    colors: $("#mColors").value.trim(), team: $("#mTeam").value.trim(),
+    notes: $("#mNotes").value.trim(), qty: Math.max(1, parseInt($("#mQty").value)||1)
+  };
+}
+function updateModalWa(){
+  if(!current) return;
+  const it = readModal();
+  $("#mTotal").textContent = it.qty>1 ? `${it.qty} kits = ${money(lineTotal(it))}` : "";
+  $("#mWa").href = waLink(`Hi U.S. Sports Industry! I'm interested in this design:\n\n${itemText(it)}\n\nFree worldwide shipping. Please send me a mock-up. Thanks!`);
+}
+function openModal(i){
+  current = TEMPLATES[i];
+  $("#mMedia").innerHTML = `<img src="${kit(current.img)}" alt="${esc(current.name)}">`;
+  $("#mCat").textContent = catName(current.cat);
+  $("#mTitle").textContent = current.name;
+  $("#mPrice").textContent = money(catPrice(current.cat));
+  $("#mDesc").textContent = current.desc + " This is a template — every colour, logo, name and number can be changed.";
+  $("#mSizes").innerHTML = SIZES.map(s=>`<button type="button" class="size" data-s="${s}">${s}</button>`).join("");
+  $("#mColors").value=""; $("#mTeam").value=""; $("#mNotes").value=""; $("#mQty").value=1;
+  updateModalWa();
+  modal.classList.add("open"); modal.setAttribute("aria-hidden","false"); lenis&&lenis.stop();
+  gsap.fromTo("#mMedia img",{scale:.85,opacity:0},{scale:1,opacity:1,duration:1,ease:"expo.out",delay:.15});
+}
+function closeModal(){ modal.classList.remove("open"); modal.setAttribute("aria-hidden","true"); lenis&&lenis.start(); }
+$("#grid").addEventListener("click",e=>{const c=e.target.closest(".card"); if(c) openModal(+c.dataset.i);});
+$$("[data-close]").forEach(b=>b.addEventListener("click",closeModal));
+$("#mSizes").addEventListener("click",e=>{const b=e.target.closest(".size"); if(b){b.classList.toggle("on"); updateModalWa();}});
+["#mColors","#mTeam","#mNotes","#mQty"].forEach(s=>$(s).addEventListener("input",updateModalWa));
+$("#qMinus").onclick=()=>{$("#mQty").value=Math.max(1,(parseInt($("#mQty").value)||1)-1);updateModalWa();};
+$("#qPlus").onclick=()=>{$("#mQty").value=(parseInt($("#mQty").value)||1)+1;updateModalWa();};
+$("#mAdd").addEventListener("click",()=>{
+  order.push(readModal()); save(); renderOrder(); closeModal(); toast("Added to your order");
+  gsap.fromTo("#cartBtn",{scale:1.3},{scale:1,duration:.8,ease:"elastic.out(1,.4)"});
+});
+document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ closeModal(); closeDrawer(); }});
+function toast(t){ const el=$("#toast"); $("span",el).textContent=t; el.classList.add("on"); clearTimeout(el._t); el._t=setTimeout(()=>el.classList.remove("on"),2200); }
+
+/* ===== footer word: always fit the width ===== */
+function fitFooter(){
+  const el=$("#footerBig"), w=el.parentElement.clientWidth;
+  el.style.fontSize="100px";
+  el.style.fontSize = Math.floor(100 * w / el.scrollWidth * 0.98) + "px";
+}
+
+/* ===== cursor ===== */
+(()=>{
+  if(matchMedia("(hover:none),(pointer:coarse)").matches) return;
+  const c=$(".cursor"), d=$(".cursor-dot");
+  let x=innerWidth/2,y=innerHeight/2,cx=x,cy=y;
+  addEventListener("pointermove",e=>{x=e.clientX;y=e.clientY;d.style.transform=`translate(${x}px,${y}px) translate(-50%,-50%)`;});
+  (function loop(){cx+=(x-cx)*.16;cy+=(y-cy)*.16;c.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`;requestAnimationFrame(loop);})();
+  document.addEventListener("pointerover",e=>{
+    const v=e.target.closest("[data-cursor='view']"), h=e.target.closest("a,button,input,textarea");
+    c.classList.toggle("is-view",!!v && !e.target.closest("button:not(.card-quick)"));
+    c.classList.toggle("is-hover",!v && !!h);
+  });
+})();
+
+/* ===== magnetic CTA ===== */
+(()=>{
+  const m=$("#magnet"); if(matchMedia("(pointer:coarse)").matches) return;
+  const area=m.parentElement;
+  area.addEventListener("pointermove",e=>{
+    const r=m.getBoundingClientRect(), dx=e.clientX-(r.left+r.width/2), dy=e.clientY-(r.top+r.height/2);
+    if(Math.hypot(dx,dy)<260) gsap.to(m,{x:dx*.35,y:dy*.35,duration:.6,ease:"power3.out"});
+    else gsap.to(m,{x:0,y:0,duration:.8,ease:"elastic.out(1,.4)"});
+  });
+  area.addEventListener("pointerleave",()=>gsap.to(m,{x:0,y:0,duration:.9,ease:"elastic.out(1,.4)"}));
+})();
+
+/* ===== smooth scroll ===== */
+let lenis=null;
+gsap.registerPlugin(ScrollTrigger);
+if(!reduce && window.Lenis){
+  lenis = new Lenis({duration:1.15,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t))});
+  lenis.on("scroll",ScrollTrigger.update);
+  gsap.ticker.add(t=>lenis.raf(t*1000));
+  gsap.ticker.lagSmoothing(0);
+  $$('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{
+    const id=a.getAttribute("href"); if(id.length<2) return;
+    e.preventDefault(); lenis.scrollTo(id==="#top"?0:id,{duration:1.6});
+  }));
+}
+
+/* ===== infinite loops (kit walls + marquees) — speed up with scroll velocity ===== */
+let scrollBoost = 0;
+ScrollTrigger.create({start:0,end:"max",onUpdate(self){ scrollBoost = Math.max(-8,Math.min(8,self.getVelocity()/300)); }});
+gsap.ticker.add(()=>{ scrollBoost *= .92; });
+function loopAxis(el,dir=1,speed=1,axis="x"){
+  let p=0, boost=0;
+  gsap.ticker.add(()=>{
+    const half = axis==="x" ? el.scrollWidth/2 : el.scrollHeight/2; if(!half) return;
+    boost += (scrollBoost - boost)*.08;
+    const v = reduce ? 0 : (speed + Math.abs(boost)*speed*1.4) * (boost<-.2 ? -1 : 1);
+    p -= v*dir;
+    if(p<=-half) p+=half; if(p>0) p-=half;
+    el.style.transform = axis==="x" ? `translate3d(${p}px,0,0)` : `translate3d(0,${p}px,0)`;
+  });
+}
+$$("[data-loop]").forEach(row=>loopAxis(row,+row.dataset.loop,+row.dataset.speed||1));
+
+// fill `el` with looping columns ("cols") or rows ("rows") of kit tiles
+function buildWall(el,mode,accents){
+  const t = Math.min(Math.max(innerWidth*.15,110),250);
+  const n = mode==="cols" ? Math.ceil(innerWidth*1.45/t)+1 : Math.ceil(innerHeight*1.4/t)+1;
+  const ids = TEMPLATES.map(x=>x.img);
+  let html="";
+  for(let i=0;i<n;i++){
+    const off=i*3%ids.length, list=ids.slice(off).concat(ids.slice(0,off));
+    const tiles=list.map(id=>`<div class="wtile"><img src="${kit(id)}" alt="" decoding="async"></div>`);
+    tiles.splice(2+i%4,0,`<div class="wtile ${accents[i%accents.length]}"></div>`);
+    const s=tiles.join("");
+    html+=`<div class="${mode==="cols"?"wcol":"wrow"}">${s}${s}</div>`;
+  }
+  el.innerHTML=html; el.style.setProperty("--t",t+"px");
+  [...el.children].forEach((line,i)=>loopAxis(line,i%2?-1:1,.45+(i%3)*.15,mode==="cols"?"y":"x"));
+}
+
+// Night sheet with "U.S." cut out, drawn on a canvas. Drawing the letters, measuring the full stop
+// and zooming all happen in one engine, so the zoom always lands dead-centre in the full stop.
+// st.fade: 0 = whole word is a window, 1 = only the full stop is.  st.zoom: push into the full stop.
+function makeSheet(cv){
+  const ctx=cv.getContext("2d");
+  const st={fade:0, zoom:1};
+  let W=0,H=0,fs=0,base=0,start=0,dot={cx:0,cy:0,poly:[],rMin:1};
+  const setFont=c=>{ c.font=`italic 900 ${fs}px Archivo`; c.fontStretch="expanded"; c.letterSpacing=(-0.02*fs)+"px"; };
+
+  // trace the full stop: pixels "U." adds over "U" -> centroid + convex outline (sharp at any zoom)
+  function traceDot(){
+    const w=Math.ceil(W), h=Math.ceil(H), off=document.createElement("canvas"); off.width=w; off.height=h;
+    const c=off.getContext("2d",{willReadFrequently:true}); setFont(c);
+    c.fillText("U.",start,base); const a=c.getImageData(0,0,w,h).data;
+    c.clearRect(0,0,w,h); c.fillText("U",start,base); const b=c.getImageData(0,0,w,h).data;
+    const pts=[]; let sx=0,sy=0;
+    for(let i=3;i<a.length;i+=4){ if(a[i]>128 && b[i]<10){ const p=(i-3)/4, x=p%w, y=(p/w)|0; pts.push([x+.5,y+.5]); sx+=x+.5; sy+=y+.5; } }
+    if(!pts.length) return {cx:W/2,cy:base-fs*.1,poly:[],rMin:fs*.08};
+    pts.sort((p,q)=>p[0]-q[0]||p[1]-q[1]);
+    const cross=(o,p,q)=>(p[0]-o[0])*(q[1]-o[1])-(p[1]-o[1])*(q[0]-o[0]);
+    const lo=[],hi=[];
+    for(const p of pts){ while(lo.length>1&&cross(lo[lo.length-2],lo[lo.length-1],p)<=0) lo.pop(); lo.push(p); }
+    for(let i=pts.length-1;i>=0;i--){ const p=pts[i]; while(hi.length>1&&cross(hi[hi.length-2],hi[hi.length-1],p)<=0) hi.pop(); hi.push(p); }
+    const poly=lo.slice(0,-1).concat(hi.slice(0,-1)), cx=sx/pts.length, cy=sy/pts.length;
+    // shortest distance from the centre to an edge: how far we must zoom to fill the screen
+    let rMin=1e9;
+    for(let i=0;i<poly.length;i++){ const [x1,y1]=poly[i],[x2,y2]=poly[(i+1)%poly.length];
+      rMin=Math.min(rMin,Math.abs((x2-x1)*(y1-cy)-(x1-cx)*(y2-y1))/Math.hypot(x2-x1,y2-y1)); }
+    return {cx,cy,poly,rMin};
+  }
+
+  function layout(){
+    const r=cv.getBoundingClientRect(), dpr=Math.min(devicePixelRatio||1,2);
+    // a tab opened in the background can be 0x0 at first; wait for a real size instead of crashing
+    W=r.width||innerWidth; H=r.height||innerHeight;
+    if(W<2||H<2){ requestAnimationFrame(layout); return; }
+    cv.width=Math.round(W*dpr); cv.height=Math.round(H*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    fs=Math.min(W*(W<700?.33:.30),H*.62); base=H/2+fs*.36;
+    setFont(ctx); start=W/2-ctx.measureText("U.S.").width/2;
+    dot=traceDot(); draw();
+  }
+
+  function draw(){
+    ctx.save();
+    ctx.globalCompositeOperation="source-over"; ctx.globalAlpha=1;
+    ctx.clearRect(0,0,W,H); ctx.fillStyle="#050b1d"; ctx.fillRect(0,0,W,H);
+    ctx.globalCompositeOperation="destination-out";
+    ctx.translate(dot.cx,dot.cy); ctx.scale(st.zoom,st.zoom); ctx.translate(-dot.cx,-dot.cy);
+    if(st.fade<1){ ctx.globalAlpha=1-st.fade; setFont(ctx); ctx.textBaseline="alphabetic"; ctx.fillText("U.S.",start,base); }
+    if(dot.poly.length){ ctx.globalAlpha=1; ctx.beginPath(); dot.poly.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y)); ctx.closePath(); ctx.fill(); }
+    ctx.restore();
+  }
+
+  // redraw only when the scroll animation changes something
+  let last="";
+  gsap.ticker.add(()=>{ const k=st.fade.toFixed(4)+"|"+st.zoom.toFixed(4); if(k!==last){ last=k; draw(); } });
+
+  layout();
+  return {st,layout,
+    // zoom at which the full stop covers the whole screen (a little extra so the edges are well clear)
+    cover(){ if(!dot.rMin||W<2) return 1; const far=Math.max(Math.hypot(dot.cx,dot.cy),Math.hypot(W-dot.cx,dot.cy),Math.hypot(dot.cx,H-dot.cy),Math.hypot(W-dot.cx,H-dot.cy)); return far/dot.rMin*1.08; }};
+}
+const fontsReady = document.fonts ? document.fonts.load("italic 900 100px Archivo").then(()=>document.fonts.ready) : Promise.resolve();
+
+function heroScene(){
+  buildWall($("#wall"),"rows",["red","navy"]);
+  const sheet=makeSheet($("#ov"));
+  addEventListener("resize",()=>sheet.layout());
+  const chars=$$("#heroTitle .ch");
+  gsap.set(chars,{yPercent:120}); gsap.set("#heroP, #heroCtas",{opacity:0,y:30});
+
+  // light that follows the pointer over the letters
+  $("#hero").addEventListener("pointermove",e=>{ $("#glow").style.setProperty("--mx",e.clientX+"px"); $("#glow").style.setProperty("--my",e.clientY+"px"); });
+  // sweeping stadium beams
+  if(!reduce){
+    gsap.fromTo("#beamL",{rotation:-28},{rotation:18,duration:6,ease:"sine.inOut",yoyo:true,repeat:-1});
+    gsap.fromTo("#beamR",{rotation:28},{rotation:-18,duration:7,ease:"sine.inOut",yoyo:true,repeat:-1});
+  }
+
+  const tl=gsap.timeline({scrollTrigger:{trigger:"#hero",start:"top top",end:"+=300%",scrub:1,pin:true,invalidateOnRefresh:true}});
+  tl.to("#hint, #hcopy, #glow",{opacity:0,duration:.15},0)
+    // zoom straight into the full stop until it just fills the screen (centre measured on the same canvas);
+    // U and S stay visible and fly outward off the edges like a camera push-in
+    .fromTo(sheet.st,{zoom:1},{zoom:()=>sheet.cover(),duration:.92,ease:"power2.in",immediateRender:false},0)
+    .fromTo("#ov",{autoAlpha:1},{autoAlpha:0,duration:.04,immediateRender:false},.95)
+    .fromTo("#beams",{opacity:.9},{opacity:.5,duration:.5,immediateRender:false},.8)
+    // the wall tips back into a stadium floor
+    // (on phones a gentler tilt keeps more kits on the tall screen)
+    .to("#wall",{rotation:0,rotationX:()=>innerWidth<768?44:58,scale:()=>innerWidth<768?1.45:1.7,yPercent:()=>innerWidth<768?6:22,duration:1.2,ease:"power2.inOut"},.95)
+    .to("#sky",{opacity:1,duration:.8},1.05)
+    .to(chars,{yPercent:0,stagger:.025,duration:.6,ease:"expo.out"},1.35)
+    .to("#heroP, #heroCtas",{opacity:1,y:0,stagger:.1,duration:.4},1.7)
+    .to({}, {duration:.3});
+}
+
+/* split letters / words */
+$$("[data-split]").forEach(el=>{
+  const walk = node=>{
+    [...node.childNodes].forEach(n=>{
+      if(n.nodeType===3){
+        const frag=document.createDocumentFragment();
+        [...n.textContent].forEach(ch=>{const s=document.createElement("span");s.className="ch";s.textContent=ch===" "?" ":ch;frag.appendChild(s);});
+        n.replaceWith(frag);
+      } else walk(n);
+    });
+  };
+  walk(el);
+});
+(()=>{
+  const el=$("#manifesto");
+  const walk=node=>{[...node.childNodes].forEach(n=>{
+    if(n.nodeType===3){const f=document.createDocumentFragment();n.textContent.split(/(\s+)/).forEach(w=>{if(!w)return;if(/^\s+$/.test(w)){f.appendChild(document.createTextNode(w));return;}const s=document.createElement("span");s.className="w";s.textContent=w;f.appendChild(s);});n.replaceWith(f);}else walk(n);
+  });};
+  walk(el);
+})();
+
+function intro(){
+  const tl=gsap.timeline();
+  // scale only (no opacity) so the sheet is never see-through if someone scrolls during the intro
+  tl.from("#ov",{scale:1.25,duration:1.8,ease:"expo.out"})
+    .to("#beams",{opacity:.9,duration:2},.6)
+    .from("#hcopy .top > *, #hcopy .bottom > *",{opacity:0,y:24,stagger:.08,duration:1,ease:"power3.out"},.5)
+    .add(()=>$("#nav").classList.remove("hide"),.4);
+  return tl;
+}
+
+function scrollScenes(){
+  // nav hide on scroll down, floating WhatsApp after hero
+  ScrollTrigger.create({start:"top -200",onUpdate(self){ $("#nav").classList.toggle("hide", self.direction===1); $("#fab").classList.toggle("on", self.scroll()>innerHeight*.9); }});
+
+  // manifesto word fill
+  gsap.to("#manifesto .w",{opacity:1,stagger:.05,ease:"none",scrollTrigger:{trigger:"#manifesto",start:"top 80%",end:"bottom 45%",scrub:true}});
+
+  // counters
+  $$("[data-count]").forEach(el=>{
+    const to=+el.dataset.count, dec=+(el.dataset.dec||0), k=el.dataset.format==="k";
+    const fmt=v=> k ? Math.round(v).toLocaleString("en-US") : v.toFixed(dec);
+    ScrollTrigger.create({trigger:el,start:"top 90%",once:true,onEnter(){ const o={v:0}; gsap.to(o,{v:to,duration:2.2,ease:"expo.out",onUpdate(){el.textContent=fmt(o.v);}}); }});
+  });
+  gsap.from(".stat",{y:60,opacity:0,stagger:.1,duration:1,ease:"expo.out",scrollTrigger:{trigger:".stats",start:"top 88%"}});
+
+  // horizontal categories
+  const track=$("#catsTrack");
+  const dist=()=>Math.max(0,track.scrollWidth-innerWidth);
+  const hz = gsap.to(track,{x:()=>-dist(),ease:"none",scrollTrigger:{trigger:"#sports",start:"top top",end:()=>"+="+dist(),pin:true,scrub:1,invalidateOnRefresh:true,anticipatePin:1,
+    onUpdate:self=>gsap.set("#catsProgress",{scaleX:self.progress})}});
+  $$(".cat").forEach(c=>{
+    const img=$(".cat-media img",c);
+    if(img) gsap.fromTo(img,{xPercent:-8,rotate:-4},{xPercent:8,rotate:4,ease:"none",scrollTrigger:{trigger:c,containerAnimation:hz,start:"left right",end:"right left",scrub:true}});
+    gsap.from(c,{rotate:5,yPercent:10,ease:"none",scrollTrigger:{trigger:c,containerAnimation:hz,start:"left 110%",end:"left 60%",scrub:true}});
+  });
+  gsap.from(".cats-head h2",{yPercent:100,opacity:0,duration:1.2,ease:"expo.out",scrollTrigger:{trigger:"#sports",start:"top 60%"}});
+
+  // section headings
+  $$(".section-head h2, .process-sticky h2").forEach(h=>{
+    gsap.from(h,{yPercent:40,skewY:6,opacity:0,duration:1.3,ease:"expo.out",scrollTrigger:{trigger:h,start:"top 88%"}});
+  });
+
+  // design cards: soft fade-and-rise (no 3D tilt, so nothing snaps at the end)
+  $$("#grid .card").forEach((card,i)=>{
+    gsap.from(card,{y:50,opacity:0,duration:1.1,delay:(i%4)*.08,ease:"power3.out",clearProps:"transform,opacity",
+      scrollTrigger:{trigger:card,start:"top bottom-=30",toggleActions:"play none none none"}});
+  });
+
+  // order cards
+  gsap.from(".o-card",{y:90,rotate:i=>(i%2?3:-3),opacity:0,stagger:.1,duration:1.2,ease:"expo.out",scrollTrigger:{trigger:".order-grid",start:"top 85%"}});
+
+  // production steps
+  gsap.to("#stepsLine",{scaleY:1,ease:"none",scrollTrigger:{trigger:"#steps",start:"top 60%",end:"bottom 60%",scrub:true}});
+  $$(".step").forEach(s=>{
+    ScrollTrigger.create({trigger:s,start:"top 62%",onEnter:()=>s.classList.add("on"),onLeaveBack:()=>s.classList.remove("on")});
+    gsap.to($(".step-art",s),{clipPath:"inset(0 0% 0 0 round 14px)",ease:"power3.inOut",duration:1.2,scrollTrigger:{trigger:s,start:"top 85%"}});
+    gsap.fromTo($(".step-art img",s),{scale:1.35},{scale:1,ease:"none",scrollTrigger:{trigger:s,start:"top bottom",end:"bottom top",scrub:true}});
+  });
+
+  // CTA: ivory doors slide open onto the kit wall (echo of the hero curtain)
+  buildWall($("#ctaWall"),"rows",["navy"]);
+  gsap.timeline({scrollTrigger:{trigger:"#ctaStage",start:"top top",end:"+=120%",scrub:1,pin:true}})
+    .to("#ctaSeam",{opacity:0,duration:.1},.05)
+    .to("#doorL",{xPercent:-100,duration:1,ease:"power3.inOut"},0)
+    .to("#doorR",{xPercent:100,duration:1,ease:"power3.inOut"},0)
+    .from("#ctaTitle .ch",{yPercent:120,stagger:.012,duration:.5,ease:"expo.out"},.5)
+    .from(".cta-content .eyebrow, .cta-sub",{opacity:0,y:24,stagger:.08,duration:.4},.6)
+    .from("#magnet",{scale:0,rotation:-90,duration:.5,ease:"back.out(1.6)"},.8)
+    .to({}, {duration:.25});
+
+  // footer word
+  const fb=$("#footerBig"); fb.innerHTML=[...fb.textContent].map(c=>`<span>${c===" "?"&nbsp;":c}</span>`).join("");
+  fitFooter();
+  gsap.from("#footerBig span",{yPercent:100,stagger:.04,ease:"power3.out",scrollTrigger:{trigger:"#footerBig",start:"top bottom",end:"bottom 95%",scrub:1}});
+}
+
+// the hero pin must be created first so later triggers measure below its spacer
+const scenesReady = fontsReady.then(()=>{ heroScene(); scrollScenes(); ScrollTrigger.refresh(); });
+function start(){
+  scenesReady.then(()=>{ intro(); document.body.classList.remove("locked"); ScrollTrigger.refresh(); });
+}
+if(reduce){ $("#loader").remove(); $("#nav").classList.remove("hide"); document.body.classList.remove("locked"); }
+else{
+  const counter={v:0};
+  gsap.timeline()
+    .from(".loader-word span",{yPercent:110,duration:1,ease:"expo.out"})
+    .to(counter,{v:100,duration:1.5,ease:"power2.inOut",onUpdate(){ $("#loaderCount").textContent=Math.round(counter.v); $("#loaderBar").style.width=counter.v+"%"; }},0)
+    .to("#loader",{clipPath:"inset(0 0 100% 0)",duration:1.1,ease:"expo.inOut",onStart:start},"+=.1")
+    .add(()=>$("#loader").remove());
+}
+addEventListener("load",()=>{ fitFooter(); ScrollTrigger.refresh(); });
+addEventListener("resize",()=>fitFooter());
+document.fonts && document.fonts.ready.then(()=>{ fitFooter(); ScrollTrigger.refresh(); });
+</script>
+</body>
+</html>

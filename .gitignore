@@ -1,0 +1,9 @@
+.vercel
+.claude
+.claude-logs
+# design previews and the original uncropped photos stay on the local machine only
+previews
+assets/images
+node_modules
+.DS_Store
+Thumbs.db
